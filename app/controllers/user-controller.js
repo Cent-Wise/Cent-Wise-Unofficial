@@ -1,5 +1,5 @@
-import userServices from "../services/user-services";
-import { setResponse, setErrorResponse } from "./response-handler";
+import * as userServices from "../services/user-services.js";
+import { setResponse, setErrorResponse } from "./response-handler.js";
 
 
 export const find = async (request, response) => {
@@ -9,28 +9,31 @@ export const find = async (request, response) => {
         setResponse(users, response);
 
     } catch (error) {
-        setErrorResponse(error, response);
+        setErrorResponse(error, response, "find");
     }
 }
 
 export const post = async (request, response) => {
     try {
        const newUser = {...request.body};
+       console.log(newUser);
        const user = await userServices.save(newUser);
+       console.log(user);
        setResponse(user, response);
 
     } catch (error) {
-        setErrorResponse(error, response);
+        setErrorResponse(error, response, "post");
     }
 }
 
 export const get = async(request, response) => {
     try {
         const id = request.params.id;
+        console.log(id);
         const user = await userServices.findById(id);
         setResponse(user, response);
     } catch (error) {
-        setErrorResponse(error, response);
+        setErrorResponse(error, response, "get");
     }
 }
 

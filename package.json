@@ -2,6 +2,7 @@
   "name": "final-project-centwise",
   "description": "## Description:",
   "version": "1.0.0",
+  "type": "module",
   "directories": {
     "doc": "docs"
   },

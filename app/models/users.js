@@ -28,7 +28,7 @@ const UserSchema = new Schema({
         required: true
     },
     ph_no: {
-        type: Number,
+        type: String,
         required: true
     }
 },

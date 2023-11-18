@@ -1,0 +1,28 @@
+import cors from "cors"; //Cross origin resource sharing
+import express from "express";
+import registerRouter from "./routes/index.js";
+import mongoose from "mongoose";
+import models from "./models/index.js";
+
+//Initailizing app
+const initialize = (app) => {
+
+    //Middlemen
+    app.use(cors()); //Enable services to use in different domain
+    app.use(express.json()); //^
+    app.use(express.urlencoded());
+    
+
+    //mongoDB connection
+    console.log("BEfore");
+
+    mongoose.connect("mongodb+srv://yashlimbodiya01:yash12345@centwiseun.xhfja1v.mongodb.net/centwiseUn?retryWrites=true&w=majority");
+    //mongoose.connect("mongodb+srv://yashlimbodiya:<password>@info-6150-yashvardhan.en7z368.mongodb.net/?retryWrites=true&w=majority");
+    console.log("After");
+    registerRouter(app);     //Initialize routes
+
+
+}
+
+
+export default initialize;
