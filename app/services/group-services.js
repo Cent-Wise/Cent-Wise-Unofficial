@@ -28,5 +28,5 @@ export const partialUpdate = async (id) => {
 }
 
 export const remove = async (id) => {
-    return await Group.findByIdAndRemove(id).exec();;
+    return await Group.findByIdAndDelete(id).exec();;
 }
