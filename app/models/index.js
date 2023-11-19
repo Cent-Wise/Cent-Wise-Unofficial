@@ -2,9 +2,12 @@
 
 import User from "./users.js";
 
-import Group from "./group.js"
+import Group from "./group.js";
+
+import Transaction from "./transaction.js";
 
 export default {
     User,
-    Group
+    Group,
+    Transaction
 }
