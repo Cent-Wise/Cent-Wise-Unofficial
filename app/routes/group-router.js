@@ -10,7 +10,8 @@ router.route('/')
 router.route('/:id')
     .get(groupController.find) //invokes when http req is GET
     .put(groupController.put) //invokes when http req is PUT
-    .delete(groupController.remove); //invokes when http req is DELETE
+    .delete(groupController.remove) //invokes when http req is DELETE
+    .patch(groupController.patch);
 
 
 export default router;
