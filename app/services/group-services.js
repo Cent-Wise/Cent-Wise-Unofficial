@@ -22,6 +22,11 @@ export const update = async (id) => {
     return group;
 }
 
+export const partialUpdate = async (id) => {
+    const group = await Group.findByIdAndUpdate(id, updatedGroup).exec();
+    return group;
+}
+
 export const remove = async (id) => {
     return await Group.findByIdAndRemove(id).exec();;
 }

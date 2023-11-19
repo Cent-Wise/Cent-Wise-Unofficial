@@ -48,6 +48,17 @@ export const put = async(request, response) => {
         setErrorResponse(error, request);
     }
 }
+export const patch = async(request, response) => {
+    try {
+        const id = request.params.id;
+        const updatedGroup = {...request.body};
+    
+        const group = await groupServices.patch(updatedGroup, id);
+        setResponse(group, response);
+    } catch (error) {
+        setErrorResponse(error, request);
+    }
+}
 
 export const remove = async(request, response) => {
     try {
