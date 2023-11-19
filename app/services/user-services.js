@@ -23,5 +23,5 @@ export const update = async (id) => {
 }
 
 export const remove = async (id) => {
-    return await User.findByIdAndRemove(id).exec();;
+    return await User.findByIdAndDelete(id).exec();;
 }

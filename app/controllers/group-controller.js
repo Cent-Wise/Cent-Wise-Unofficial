@@ -64,7 +64,7 @@ export const remove = async(request, response) => {
     try {
         const id = request.params.id;
         const group = await groupServices.remove(id);
-        setResponse({}, response);
+        setResponse({"Delete":true}, response);
     } catch (error) {
         setErrorResponse(error, request);
     }
