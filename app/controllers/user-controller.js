@@ -45,7 +45,7 @@ export const put = async(request, response) => {
         const user = await userServices.update(updatedUser, id);
         setResponse(user, response);
     } catch (error) {
-        setErrorResponse(error, request);
+        setErrorResponse(error, response);
     }
 }
 
@@ -55,6 +55,6 @@ export const remove = async(request, response) => {
         const user = await userServices.remove(id);
         setResponse({}, response);
     } catch (error) {
-        setErrorResponse(error, request);
+        setErrorResponse(error, response);
     }
 }

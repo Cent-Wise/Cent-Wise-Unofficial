@@ -17,16 +17,16 @@ export const find = async (id) => {
     return group;
 }
 
-export const update = async (id) => {
+export const update = async (updatedGroup, id) => {
     const group = await Group.findByIdAndUpdate(id, updatedGroup).exec();
     return group;
 }
 
-export const partialUpdate = async (id) => {
+export const patch = async (updatedGroup, id) => {
     const group = await Group.findByIdAndUpdate(id, updatedGroup).exec();
     return group;
 }
 
 export const remove = async (id) => {
-    return await Group.findByIdAndDelete(id).exec();;
+    return await Group.findByIdAndDelete(id).exec();
 }

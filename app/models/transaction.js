@@ -5,12 +5,12 @@ import mongoose, { trusted } from "mongoose";
 const Schema = mongoose.Schema;
 
 const TransactionSchema = new Schema({
-    Payer_id: {
+    payer_id: {
         type: String,
         required: true,
         unique: true
     },
-    Payee_id: {
+    payee_id: {
         type: String,
         required: true,
         unique: true
@@ -26,7 +26,7 @@ const TransactionSchema = new Schema({
     
     },
     
-    expense_id: {
+    Expense: {
         type: String,
         required: true,
         unique: true,

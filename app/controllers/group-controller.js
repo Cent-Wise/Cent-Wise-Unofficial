@@ -45,7 +45,7 @@ export const put = async(request, response) => {
         const group = await groupServices.update(updatedGroup, id);
         setResponse(group, response);
     } catch (error) {
-        setErrorResponse(error, request);
+        setErrorResponse(error, response);
     }
 }
 export const patch = async(request, response) => {
@@ -56,7 +56,7 @@ export const patch = async(request, response) => {
         const group = await groupServices.patch(updatedGroup, id);
         setResponse(group, response);
     } catch (error) {
-        setErrorResponse(error, request);
+        setErrorResponse(error, response);
     }
 }
 
@@ -66,6 +66,6 @@ export const remove = async(request, response) => {
         const group = await groupServices.remove(id);
         setResponse({"Delete":true}, response);
     } catch (error) {
-        setErrorResponse(error, request);
+        setErrorResponse(error, response);
     }
 }
