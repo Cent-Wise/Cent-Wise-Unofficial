@@ -26,11 +26,11 @@ const TransactionSchema = new Schema({
     
     },
     
-    Expense: {
+    expense: {
         type: String,
         required: true,
         unique: true,
-    },
+    }
      
 },
 {

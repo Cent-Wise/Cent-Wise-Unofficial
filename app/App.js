@@ -16,7 +16,7 @@ const initialize = (app) => {
     //mongoDB connection
     console.log("BEfore");
 
-    mongoose.connect("mongodb+srv://yashlimbodiya01:yash12345@centwiseun.xhfja1v.mongodb.net/centwiseUn?retryWrites=true&w=majority");
+    mongoose.connect("mongodb+srv://centwise:centwise12345@cluster0.fopmn2v.mongodb.net/centwise?retryWrites=true&w=majority");
     //mongoose.connect("mongodb+srv://yashlimbodiya:<password>@info-6150-yashvardhan.en7z368.mongodb.net/?retryWrites=true&w=majority");
     console.log("After");
     registerRouter(app);     //Initialize routes

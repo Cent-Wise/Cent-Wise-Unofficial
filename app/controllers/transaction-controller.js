@@ -30,7 +30,7 @@ export const findById = async(request, response) => {
     try {
         const id = request.params.id;
         console.log(id);
-        const transaction = await transactionServices.findById(id);
+        const transaction = await transactionServices.find(id);
         setResponse(transaction, response);
     } catch (error) {
         setErrorResponse(error, response, "get");

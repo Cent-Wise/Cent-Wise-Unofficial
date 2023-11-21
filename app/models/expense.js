@@ -19,10 +19,10 @@ const ExpenseSchema = new Schema({
             type: String,
             required: true
       },
-      Group: {
+      group: {
             type: String
       },
-      User: {
+      user: {
             type: String,
             required: true
       },

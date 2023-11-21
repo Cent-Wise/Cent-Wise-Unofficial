@@ -39,10 +39,10 @@ export const update = async(request, response) => {
             const id = request.params.id;
             const updatedExpense = {...request.body};
 
-            const expense = await expenseServices.patch(updatedExpense, id);
+            const expense = await expenseServices.patch(id, updatedExpense);
             setResponse(expense, response);
       }catch(error){
-            setErrorResponse(expense, response);
+            setErrorResponse(error, response);
       }
 }
 

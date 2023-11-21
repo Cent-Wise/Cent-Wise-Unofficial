@@ -3,7 +3,7 @@ import * as expenseController from "../controllers/expense-controller.js";
 
 const router = express.Router();
 
-router.route('/create')
+router.route('/')
       .post(expenseController.post);
 
 router.route('/:id')
