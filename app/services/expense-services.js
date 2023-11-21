@@ -10,12 +10,12 @@ export const find = async (id) => {
       return expense;
 }
 
-export const update = async (updatedExpense, id) => {
+export const update = async (id, updatedExpense) => {
       const expense = await Expense.findByIdAndUpdate(id, updatedExpense).exec();
       return expense;
 }
 
-export const patch = async (updatedExpense, id) =>  {
+export const patch = async (id, updatedExpense) =>  {
       const expense = await Expense.findByIdAndUpdate(id, updatedExpense).exec();
       return expense;
 }

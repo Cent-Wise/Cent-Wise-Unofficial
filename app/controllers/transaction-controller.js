@@ -2,7 +2,7 @@ import * as transactionServices from "../services/transaction-service.js";
 import { setResponse, setErrorResponse } from "./response-handler.js";
 
 
-export const find = async (request, response) => {
+export const findByParams = async (request, response) => {
     try {
         const params = {...request.query}; 
         const transaction = await transactionServices.search(params);
@@ -26,7 +26,7 @@ export const post = async (request, response) => {
     }
 }
 
-export const get = async(request, response) => {
+export const findById = async(request, response) => {
     try {
         const id = request.params.id;
         console.log(id);
@@ -34,6 +34,40 @@ export const get = async(request, response) => {
         setResponse(transaction, response);
     } catch (error) {
         setErrorResponse(error, response, "get");
+    }
+}
+
+export const put = async(request, response) => {
+    try {
+        const id = request.params.id;
+        const updatedTransaction = {...request.body};
+        const transaction = await transactionServices.update(id, updatedTransaction);
+        setResponse(transaction, response);
+    } catch (error) {
+        setErrorResponse(error, response);
+    }
+}
+
+export const patch = async(request, response) => {
+    try {
+        const id = request.params.id;
+        const updatedTransaction = {...request.body};
+    
+        const transaction = await transactionServices.patch(id, updatedTransaction);
+        setResponse(transaction, response);
+    } catch (error) {
+        setErrorResponse(error, response);
+    }
+}
+
+
+export const remove = async(request, response) => {
+    try {
+        const id = request.params.id;
+        const transaction = await userServices.remove(id);
+        setResponse({"transactionDeleted":true}, response);
+    } catch (error) {
+        setErrorResponse(error, response);
     }
 }
 

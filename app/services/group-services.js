@@ -17,12 +17,12 @@ export const find = async (id) => {
     return group;
 }
 
-export const update = async (updatedGroup, id) => {
+export const update = async (id, updatedGroup) => {
     const group = await Group.findByIdAndUpdate(id, updatedGroup).exec();
     return group;
 }
 
-export const patch = async (updatedGroup, id) => {
+export const patch = async (id, updatedGroup) => {
     const group = await Group.findByIdAndUpdate(id, updatedGroup).exec();
     return group;
 }

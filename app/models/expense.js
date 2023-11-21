@@ -8,7 +8,7 @@ const ExpenseSchema = new Schema({
             required: true
       },
       e_amount: {
-            type: number,
+            type: Number,
             required: true
       },
       currency: {

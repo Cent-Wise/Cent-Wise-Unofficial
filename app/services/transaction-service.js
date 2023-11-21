@@ -16,3 +16,17 @@ export const find = async (id) => {
     const transaction = await Transaction.findById(id).exec();
     return transaction;
 }
+
+export const update = async (id, updatedTransaction) => {
+    const transaction = await Transaction.findByIdAndUpdate(id, updatedTransaction).exec();
+    return transaction;
+}
+
+export const patch = async (id, updatedTransaction) => {
+    const transaction = await Transaction.findByIdAndUpdate(id, updatedTransaction).exec();
+    return transaction;
+}
+
+export const remove = async (id) => {
+    return await Transaction.findByIdAndDelete(id).exec();;
+}

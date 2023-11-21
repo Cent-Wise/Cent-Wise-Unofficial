@@ -2,7 +2,7 @@ import * as groupServices from "../services/group-services.js";
 import { setResponse, setErrorResponse } from "./response-handler.js";
 
 
-export const find = async (request, response) => {
+export const findByParams = async (request, response) => {
     try {
         const params = {...request.query}; 
         const group = await groupServices.search(params);
@@ -26,11 +26,11 @@ export const post = async (request, response) => {
     }
 }
 
-export const get = async(request, response) => {
+export const findById = async(request, response) => {
     try {
         const id = request.params.id;
         console.log(id);
-        const group = await groupServices.findById(id);
+        const group = await groupServices.find(id);
         setResponse(group, response);
     } catch (error) {
         setErrorResponse(error, response, "get");
@@ -42,7 +42,7 @@ export const put = async(request, response) => {
         const id = request.params.id;
         const updatedGroup = {...request.body};
     
-        const group = await groupServices.update(updatedGroup, id);
+        const group = await groupServices.update(id, updatedGroup);
         setResponse(group, response);
     } catch (error) {
         setErrorResponse(error, response);
@@ -53,7 +53,7 @@ export const patch = async(request, response) => {
         const id = request.params.id;
         const updatedGroup = {...request.body};
     
-        const group = await groupServices.patch(updatedGroup, id);
+        const group = await groupServices.patch(id, updatedGroup);
         setResponse(group, response);
     } catch (error) {
         setErrorResponse(error, response);

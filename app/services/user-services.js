@@ -17,9 +17,14 @@ export const find = async (id) => {
     return users;
 }
 
-export const update = async (id) => {
+export const update = async (id, updatedUser) => {
     const users = await User.findByIdAndUpdate(id, updatedUser).exec();
     return users;
+}
+
+export const patch = async (id, updatedUser) => {
+    const user = await User.findByIdAndUpdate(id, updatedUser).exec();
+    return user;
 }
 
 export const remove = async (id) => {

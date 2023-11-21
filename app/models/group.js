@@ -18,12 +18,15 @@ const GroupSchema = new Schema({
         required: true,
        
     },
-    User: {
-        type: String,
-        required: true,
-        unique: true,
-
-    }
+    users: [
+        {
+            user: {
+                type: String
+            }
+        }
+    ]
+        
+    
    
 },
 {

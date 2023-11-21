@@ -27,7 +27,7 @@ export const updateAll = async (request, response) => {
            const id = request.params.id;
            const updatedExpense = {...request.body};
 
-           const expense = await expenseServices.update(updatedExpense, id);
+           const expense = await expenseServices.update(id, updatedExpense);
            setResponse(expense, response);
       }catch(error){
             setErrorResponse(error, response);

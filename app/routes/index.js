@@ -1,6 +1,6 @@
 import userRouter from "./user-router.js"
 import groupRouter from "./group-router.js"
-import transactionRouter from "./transasction-router.js"
+import transactionRouter from "./transaction-router.js"
 import expenseRouter from "./expense-router.js";
 
 export default (app) => {
