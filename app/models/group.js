@@ -21,7 +21,8 @@ const GroupSchema = new Schema({
     users: [
         {
             user: {
-                type: String
+                type: String,
+                unique: true
             }
         }
     ]
